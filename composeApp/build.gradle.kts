@@ -55,6 +55,7 @@ kotlin {
             implementation(libs.androidx.navigation.composee)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.kotlinx.datetime)
+            implementation("org.slf4j:slf4j-api:2.0.9")
         }
 
         commonTest.dependencies {
@@ -75,6 +76,7 @@ kotlin {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
             implementation(libs.ktor.client.okhttp)
+            implementation("ch.qos.logback:logback-classic:1.4.11")
         }
 
         iosMain.dependencies {
