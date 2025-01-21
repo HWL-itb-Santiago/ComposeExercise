@@ -87,7 +87,6 @@ fun DiceRoller()
 
 @Composable
 fun DiceImage(diceNumber: Int, modifier: Modifier = Modifier) {
-    // Mostrar la imagen correspondiente al número del dado
     val imageRes = when (diceNumber) {
         1 -> Res.drawable.dice_1
         2 -> Res.drawable.dice_2

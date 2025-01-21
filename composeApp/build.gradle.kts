@@ -106,6 +106,7 @@ android {
 dependencies {
     androidTestImplementation(libs.androidx.uitest.junit4)
     debugImplementation(libs.androidx.uitest.testManifest)
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
 }
 
 compose.desktop {
