@@ -5,17 +5,13 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 
@@ -38,30 +34,26 @@ fun Counter() {
         background(color = MaterialTheme.colorScheme.onBackground)
     )
     {
-        Row()
+        Row(
+            modifier = Modifier.fillMaxSize()
+        )
         {
-            Column(
-            )
-            {
-                Text(text = "${viewModel.score1.value}", color = Color.White)
-                Button(
-                    onClick = viewModel::scoreOneClick // or { viewModel.sayBye() }
-                ) {
-                    Text(text = "Score")
-                }
-            }
-            Column (
-                modifier = Modifier.padding(start = 150.dp)
-            )
-            {
-                Text(text = "${viewModel.score2.value}", color = Color.White)
-                Button(
-                    onClick = viewModel::scoreTwoClick // or { viewModel.sayBye() }
-                ) {
-                    Text(text = "Score")
-                }
-            }
+            ButtonScore(viewModel.score1.value, viewModel::scoreOneClick)
+            ButtonScore(viewModel.score2.value, viewModel::scoreTwoClick)
         }
     }
+}
 
+@Composable
+fun ButtonScore(score : Int, toDo : () -> Unit)
+{
+    Column()
+    {
+        Text(text = "$score", color = Color.White)
+        Button(
+            onClick = toDo // or { viewModel.sayBye() }
+        ) {
+            Text(text = "Score")
+        }
+    }
 }
