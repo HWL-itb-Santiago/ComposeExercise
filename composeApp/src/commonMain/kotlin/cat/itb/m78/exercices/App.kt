@@ -2,6 +2,7 @@ package cat.itb.m78.exercices
 
 
 import androidx.compose.runtime.*
+import cat.itb.m78.exercices.navigation.LibNav
 import cat.itb.m78.exercices.navigation.NavigationHoisting
 import cat.itb.m78.exercices.navigation.ScreenMenu
 import cat.itb.m78.exercices.state.DiceRoller
@@ -14,5 +15,5 @@ import cat.itb.m78.exercices.viewModel.ShoppingList
 
 @Composable
 internal fun App() = AppTheme {
-    NavigationHoisting()
+    LibNav()
 }

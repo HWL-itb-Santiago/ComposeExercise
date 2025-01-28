@@ -28,7 +28,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 
-data class Product(val name : String, val ammount : Long)
+data class Product(val name : String, val amount : Long)
 
 class ShoppingListViewModel : ViewModel() {
     var name = mutableStateOf("")
@@ -95,7 +95,7 @@ fun ItemSection(listOfItems : SnapshotStateList<Product>)
                     text = item.name, modifier = Modifier.padding(start = 10.dp)
                 )
                 Text(
-                    text = "${item.ammount}", modifier = Modifier.padding(end = 10.dp)
+                    text = "${item.amount}", modifier = Modifier.padding(end = 10.dp)
                 )
             }
         }
